@@ -1,7 +1,3 @@
-
-/*This pipeline is specially designed for the game's design in the unity 3D game engine.
-It is a simple pipeline demonstrating the stages involved in developing and deploying a Unity game.
-*/
 pipeline
 {
    agent any
@@ -11,8 +7,7 @@ pipeline
                    {
                        steps 
                            {
-                               echo 'Task: Build the Unity project.'
-                               echo 'Tool: Unity command line interface.'
+                               echo 'echo 'Building the code using Maven'.'
                            }
                    }
           
@@ -20,8 +15,8 @@ pipeline
                    {
                        steps 
                            {
-                               echo 'Task: Run unit tests and integration tests.'
-                               echo 'Tool: Unity Test Runner.'
+                               echo 'Task: Running unit tests and integration tests.'
+                               echo 'Tool:  Selenium.'
                            }   
                    }
           
@@ -29,7 +24,7 @@ pipeline
                    {
                        steps 
                            {
-                               echo 'Task: Analyse the code to ensure it meets industry standards.'
+                               echo 'Task: Analyse the code .'
                                echo 'Tool: SonarQube.'
                            }
                    }
@@ -71,7 +66,7 @@ pipeline
                        steps 
                            {
                                echo 'Task: Run integration tests on the staging environment.'
-                               echo 'Tool: Unity Test Runner.'
+                               echo 'Tool: AWS EC2 instance.'
                            }
                        post 
                            {
@@ -95,8 +90,8 @@ pipeline
                    {
                        steps 
                            {
-                               echo 'Task: Deploy the game to a production server or publish it to a platform (e.g., Google Play Store, Apple App Store).'
-                               echo 'Tool: Fastlane or similar.'
+                               echo 'Task:Deploying the application to production server.'
+                               echo 'Tool: AWS EC2 instance.'
                            }
                    }
           }
@@ -104,7 +99,7 @@ pipeline
  
 def EmailNotification (stageName)
 {
-   def recipient = 'ruthnenice@gmail.com'
+   def recipient = 'wendyapiyo@gmail.com'
    def subject = "Jenkins Stage: ${stageName}"
    def body = "The '${stageName}' stage finished success"
    def logFile = currentBuild.rawBuild.getLogFile()
