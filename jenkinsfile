@@ -4,11 +4,11 @@ pipeline
       stages 
           {
               stage('Build') 
-                      {
+                         {
                        steps 
                            {
-                               echo 'Task: Build the project.'
-                               echo 'Tool: maven.'
+                               echo 'Task: Build the Unity project.'
+                               echo 'Tool: Unity command line interface.'
                            }
                    }
           
