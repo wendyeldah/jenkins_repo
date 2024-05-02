@@ -104,7 +104,7 @@ pipeline
  
 def EmailNotification (stageName)
 {
-   def recipient = 'wendyapiyo@gmail.com'
+   def recipient = 'ruthnenice@gmail.com'
    def subject = "Jenkins Stage: ${stageName}"
    def body = "The '${stageName}' stage finished success"
    def logFile = currentBuild.rawBuild.getLogFile()
